@@ -39,8 +39,16 @@ class MyBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Alphabet'),
+        title: Text(
+          'Flutter Alphabet',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
+        backgroundColor: color[2],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -48,20 +56,19 @@ class MyBox extends StatelessWidget {
           margin: EdgeInsets.fromLTRB(0, 50, 0, 50),
           child: Wrap(
             alignment: WrapAlignment.center,
-            spacing: 10,
-            runSpacing: 10,
+            spacing: 15,
+            runSpacing: 15,
             children: [
               for (int i = 0; i < Alphabets.length; i++)
                 Container(
                   height: 200,
                   width: 200,
                   color: color[i % color.length],
-                  // margin: EdgeInsets.all(10),
                   child: Center(
                     child: Text(
                       Alphabets[i],
                       style: TextStyle(
-                        fontSize: 50,
+                        fontSize: 70,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
